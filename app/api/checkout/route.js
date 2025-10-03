@@ -1,13 +1,13 @@
 import Stripe from "stripe"
 
 
-const API_KEY = process.env.STRIPE_SECRET_KEY
+const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
 const stripe = new Stripe(API_KEY)
 
 export async function POST(request) {
     try {
-        const { lineItems } = await request.json()
-        console.log(lineItems)
+        const { lineItems } = await request.json();
+        console.log(lineItems);
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
             line_items: lineItems,

@@ -4,8 +4,11 @@ import Portal from './Portal';
 import {useProducts} from "../context/ProductContext.jsx"
 
 export default function Products(props) {
-    const {planner, stickers} = props;
-    const [portalImage, setPortalImage] = useState(null);
+    const {planner, stickers} = props; //from stripe listings
+    const [portalImage, setPortalImage] = useState(null); //to check which image has been clicked
+
+    // console.log(planner);
+    // console.log(stickers);
 
     const {handleIncrementProduct, cart} = useProducts();
     console.log(cart);
@@ -24,7 +27,7 @@ export default function Products(props) {
             <div className="section-container">
                 <div className="section-header">
                     <h2>Shop Our Selection</h2>
-                    <p>From organisation or accessorization</p>
+                    <p>From organisation to accessorization</p>
                 </div>
                 <div className="planner-content">
                     <div>

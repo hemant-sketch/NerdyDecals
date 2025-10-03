@@ -35,8 +35,8 @@ export default function RootLayout({ children }) {
           <main>
             {children}
           </main>
-          
           <div className="hr"/>
+          
           <footer>
             <div className="email-container">
               <h5>Get a sneak peak at new additions to the store, special offers,
@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
 
             <div className="links-container">
               <div>
-                <h3>Hemant</h3>
+                <h3>Hemant Chauhan</h3>
                 <Link target="_blank" href="/">Github</Link>
                 <Link target="_blank" href={"/"}>Roadmap</Link>
               </div>
@@ -63,11 +63,11 @@ export default function RootLayout({ children }) {
             </div>
             <div className="socials">
               <p>©<a href="https://portfoliowebsite" target="_blank">Hemant Chauhan
-              </a>2025<br/>Built with Next.JS & <a target="_blank" href="https://"></a>🔥</p>
+              </a>2025<br/>Built with Next.JS & <a target="_blank" href="https://stripe.com/in">Stripe</a>🔥</p>
               <div className="social-links">
                 <Link href={"/"} target="_blank"><i className="fa-brands fa-github"></i></Link>
-                <Link href={"/"} target="_blank"><i className="fa-solid fa-twitter"></i></Link>
-                <Link href={"/"} target="_blank"><i className="fa-brands fa-linkedin"></i></Link>
+                <Link href={"/"} target="_blank"><i className="fa-brands fa-twitter"></i></Link>
+                <Link href={"https://www.linkedin.com/in/hemant-chauhan-a84727387/"} target="_blank"><i className="fa-brands fa-linkedin"></i></Link>
         
               </div>
             </div>

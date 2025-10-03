@@ -9,7 +9,7 @@ export default function ProductProvider(props) {
 
     const [cart, setCart] = useState({});
 
-    function handleIncrementProduct(price_id, num, data, noIncrement=false) {
+    function handleIncrementProduct(price_id, num, data, noIncrement=false) {  //data konsa item
         const newCart = {
             ...cart,
         }

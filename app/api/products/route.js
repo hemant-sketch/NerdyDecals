@@ -1,8 +1,8 @@
 import Stripe from "stripe"
 
 
-const API_KEY = process.env.STRIPE_SECRET_KEY
-const stripe = new Stripe(API_KEY)
+const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
+const stripe = new Stripe(API_KEY);
 
 export async function GET() {
     try {
