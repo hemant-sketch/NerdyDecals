@@ -2,7 +2,10 @@ import Stripe from "stripe"
 
 
 const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
-const stripe = new Stripe(API_KEY);
+// const stripe = new Stripe(API_KEY);  //for dev
+const stripe = new Stripe(API_KEY, {
+    apiVersion:  '2025-09-30'
+});  //for prod
 
 export async function GET() {
     try {
