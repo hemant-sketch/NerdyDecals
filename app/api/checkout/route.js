@@ -2,7 +2,7 @@ import Stripe from "stripe";
 import {getBaseUrl} from "../../../utils/getBaseUrl.js"
 
 
-const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
+const API_KEY = process.env.STRIPE_SECRET_KEY
 // const stripe = new Stripe(API_KEY);  //for dev
 const stripe = new Stripe(API_KEY, {
     apiVersion:  '2020-08-27'
