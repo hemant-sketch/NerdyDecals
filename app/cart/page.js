@@ -3,7 +3,7 @@
 import { useProducts } from "@/context/ProductContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { getBaseUrl } from "../../utils/getBaseUrl.js"; 
+
 
 export default function CartPage() {
     const router = useRouter()
@@ -31,7 +31,7 @@ export default function CartPage() {
 
     async function createCheckout() {
         try {
-            const baseURL = getBaseUrl();
+            const baseURL = process.env.NEXT_PUBLIC_BASE_URL
             const lineItems = Object.keys(cart).map((item, itemIndex) => {
                 return {
                     price: item,
@@ -46,9 +46,7 @@ export default function CartPage() {
                 },
                 body: JSON.stringify({ lineItems })
             })
-            
             const data = await response.json()
-            
             if (response.ok) {
                 console.log(data)
                 router.push(data.url)
@@ -69,8 +67,8 @@ export default function CartPage() {
 
                     const imgName = itemData.name === 'Medieval Dragon Month Planner' ?
                         'planner' :
-                        itemData.name.replaceAll(' Sticker.png', '').replaceAll(' ', '_');
-                    const imgUrl = 'low_res/' + imgName + '.jpeg';
+                        itemData.name.replaceAll(' Sticker.png', '').replaceAll(' ', '_')
+                    const imgUrl = 'low_res/' + imgName + '.jpeg'
 
                     return (
                         <div key={itemIndex} className="cart-item">
