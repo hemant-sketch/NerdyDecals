@@ -1,4 +1,5 @@
-import Stripe from "stripe"
+import Stripe from "stripe";
+import {getBaseUrl} from "../../../utils/getBaseUrl.js"
 
 
 const API_KEY = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
@@ -11,11 +12,12 @@ export async function POST(request) {
     try {
         const { lineItems } = await request.json();
         console.log(lineItems);
+        const baseURL = getBaseUrl();
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
             line_items: lineItems,
-            success_url: process.env.NEXT_PUBLIC_BASE_URL + '/success',
-            cancel_url: process.env.NEXT_PUBLIC_BASE_URL + '/'
+            success_url: baseURL + '/success',
+            cancel_url: baseURL + '/'
         })
         return Response.json(session)
     } catch (err) {

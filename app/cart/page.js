@@ -3,6 +3,7 @@
 import { useProducts } from "@/context/ProductContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { getBaseUrl } from "../../utils/getBaseUrl.js"; 
 
 export default function CartPage() {
     const router = useRouter()
@@ -30,7 +31,7 @@ export default function CartPage() {
 
     async function createCheckout() {
         try {
-            const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+            const baseURL = getBaseUrl();
             const lineItems = Object.keys(cart).map((item, itemIndex) => {
                 return {
                     price: item,
