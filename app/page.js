@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 
 import Products from "@/components/Products.jsx";
 import ImageBanner from "@/components/ImageBanner.jsx"
